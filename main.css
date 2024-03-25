@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: "arghavan";
+    font-family: "Bardiya";
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
@@ -12,8 +12,8 @@
 
 
 @font-face {
-    font-family: "arghavan";
-    src: url(./Fonts/Arghavan.ttf);
+    font-family: "Bardiya";
+    src: url(./Fonts/Bardiya.ttf);
 }
 
 :root {
@@ -48,6 +48,7 @@ header section
 
 .navbar{
     display: flex;
+    direction: rtl;
 }
 
 .navbar li {
@@ -56,7 +57,7 @@ header section
 
 .navbar a {
     margin: 0 20px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: var(--second-text-color);
 }
 
@@ -74,7 +75,7 @@ header section
     background: var(--main-color);
     width: 30%;
     height: 2px;
-    left: 20px;
+    right: 20px;
     bottom: 0;
     position: absolute;
 }
@@ -90,7 +91,7 @@ header section
     background: var(--main-color);
     width: 30%;
     height: 2px;
-    left: 20px;
+    right: 20px;
     bottom: 0;
     position: absolute;
 }
@@ -127,6 +128,15 @@ header section
     .navbar li {
         margin-bottom: 20px;
     }
+    .navbar a {
+        padding: 0 20px;
+    }
+    .navbar .active::after {
+        right: 40px;
+    }
+    .navbar a:hover::after {
+        right: 40px;
+    }
     #mobile {
         display: flex;
         align-items: center;
@@ -143,7 +153,7 @@ header section
         color: #222;
         font-size: 28px;
         top: 30px;
-        left: 30px;
+        right: 30px;
     }
     #lg-bag {
         display: none;
@@ -162,16 +172,19 @@ section {
 }
 
 .home {
-    background-image: url(./image/hero4.png);
-    background-position: top -15% right 0;
+    background-image: url(./image/new.hero4.png);
+    background-position: top -15% left 0;
     background-size: cover;
+    background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
 }
 
 .home-container {
+    direction: rtl;
     align-items: center;
     margin-top: 15rem;
+    margin-left: auto;
 }
 
 .home-container h3 {
@@ -198,6 +211,7 @@ section {
 
 .home-container p {
     margin-bottom: 18px;
+    margin-left: 2rem;
 }
 
 .home-container .btn {
@@ -205,16 +219,17 @@ section {
     background-color: transparent;
     border: 0;
     color: var(--main-color);
-    padding: 11px 80px 11px 65px;
+    padding: 11px 80px 11px 85px;
     background-repeat: no-repeat;
     font-weight: 700;
     font-size: 15px;
     cursor: pointer;
+    margin-left: 3rem;
 }
 
 @media(max-width:799px) {
     .home {
-        background-position: top -15% right 30%;
+        background-position: top -15% left 0;
         height: 95vh;
     }
     .home-container h1 {
@@ -239,6 +254,7 @@ image section
     grid-template-columns: repeat(auto-fit, minmax(200px, auto));
     text-align: center;
     gap: 1rem;
+    justify-content: center;
 }
 
 .image-content .box {
@@ -254,7 +270,7 @@ image section
 }
 
 .image-content .box h1 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     margin-top: 14px;
     font-weight: 600;
 }
@@ -307,6 +323,14 @@ image section
     color: var(--main-color);
 }
 
+@media (max-with:475px) {
+    .image-content {
+        place-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+}
+
 
 /*
 ==================
@@ -352,6 +376,10 @@ featured section
     border-radius: 30px;
 }
 
+.featured-container .box .box-text {
+    direction: rtl;
+}
+
 .featured-container .box .box-text h2 {
     color: #959595;
     font-weight: 200;
@@ -377,7 +405,7 @@ featured section
 
 .featured-container .box .bx-cart {
    position: absolute;
-   right: 10px;
+   left: 10px;
    bottom: 20px;
    background: #e8f6ea;
    color: var(--main-color);
@@ -597,6 +625,7 @@ Newsletters section
     display: flex;
     justify-content: space-between;
     align-items: center;
+    direction: rtl;
 }
 
 .newsletter-text h1 {
@@ -608,6 +637,7 @@ Newsletters section
 .newsletter-text p {
     color: #00669d;
     font-weight: 600;
+    font-size: 1.2rem;
 }
 
 .newsletter-text p span {
@@ -618,17 +648,19 @@ Newsletters section
     width: 100%;
     height: 3.125rem;
     padding: 0 1.25rem;
-    font-size: 14px;
+    font-size: 16px;
     border: 1px solid transparent;
     border-radius: 4px;
     outline: none;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
+    direction: rtl;
 }
 
 .newsletters-container .form {
     display: flex;
     width: 40%;
+    direction: ltr;
 }
 
 .newsletters-container .form .normal {
